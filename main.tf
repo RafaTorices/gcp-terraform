@@ -37,10 +37,7 @@ resource "google_compute_instance" "keep-bonus-vm" {
   }
   # Configuración de red
   network_interface {
-    network = "keep-bonus-vpc"
-    access_config {
-      // Elegir una dirección IP ephemeral o asignar una dirección IP estática aquí
-    }
+    network = google_compute_network.keep-bonus-vpc.name
   }
 }
 
