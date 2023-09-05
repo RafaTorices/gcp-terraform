@@ -22,9 +22,9 @@ resource "google_storage_bucket" "keep-bonus-bucket" {
 }
 
 # Instancia de Compute Engine
-resource "google_compute_instance" "keep_bonus" {
+resource "google_compute_instance" "keep-bonus-vm" {
   # Nombre de la instancia
-  name = "keep-bonus"
+  name = "keep-bonus-vm"
   # Tipo de máquina
   machine_type = "n1-standard-1"
   # Zona de la instancia
