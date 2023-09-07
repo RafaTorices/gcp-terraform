@@ -48,8 +48,6 @@ resource "google_compute_instance" "keep-bonus-vm" {
   name = "keep-bonus-vm"
   # Tipo de máquina
   machine_type = "n1-standard-1"
-  # Zona de la instancia
-  zone = "europe-west1-b"
   # Disco de arranque
   boot_disk {
     initialize_params {
