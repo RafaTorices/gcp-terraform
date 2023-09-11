@@ -1,6 +1,7 @@
 .terraform/*
 .terraform*
 *.json
+credentials.json
 *.tfstate
 *.backup
 .tfvars
