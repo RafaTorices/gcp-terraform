@@ -14,8 +14,11 @@ Para poder ejecutar este script es necesario tener instalado Terraform y tener u
 
 Para ejecutar el script, es necesario tener un archivo de credenciales de servicio de GCP. Este archivo se puede descargar desde la consola de GCP en la sección IAM y administración > Cuentas de servicio. Una vez descargado, se debe guardar en la carpeta del script con el nombre `credentials.json`.
 
-Para ejecutar el script, se debe ejecutar el comando `terraform init` en la carpeta del script para inicializar Terraform. Después, se debe ejecutar el comando `terraform apply` para desplegar la infraestructura. Terraform pedirá confirmación para desplegar los recursos.
+Para ejecutar el script, se debe ejecutar el comando `terraform init` en la carpeta del script para inicializar Terraform. Después, se debe ejecutar el comando `terraform apply -var-file="gcp.tfvars` para desplegar la infraestructura. Terraform pedirá confirmación para desplegar los recursos.
+
+>**_INFORMACIÓN_**<br>
+El fichero `gcp.tfvars` contiene las variables necesarias para desplegar la infraestructura. Como en este caso es a modo de práctica, se ha incluído en el repositorio. En un caso real, este fichero no se debería incluir en el repositorio, ya que puede contener información sensible.
 
 ## Destrucción
 
-Para destruir la infraestructura desplegada, se debe ejecutar el comando `terraform destroy` en la carpeta del script. Terraform pedirá confirmación para destruir los recursos.
+Para destruir la infraestructura desplegada, se debe ejecutar el comando `terraform destroy -var-file="gcp.tfvars` en la carpeta del script. Terraform pedirá confirmación para destruir los recursos.
