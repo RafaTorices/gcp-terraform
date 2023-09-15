@@ -26,6 +26,7 @@ resource "google_sql_database_instance" "mysql" {
       private_network = google_compute_network.keep-bonus-vpc.id
     }
   }
+  deletion_protection = "false"
 }
 
 # Bases de datos dentro de la instancia

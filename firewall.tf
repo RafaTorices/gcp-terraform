@@ -1,5 +1,8 @@
 # Crear una regla de firewall que permita SSH (puerto 22) y puerto 80
 resource "google_compute_firewall" "allow-ssh" {
+  depends_on = [
+    google_compute_network.keep-bonus-vpc
+  ]
   name    = "keep-bonus-allow-ssh-80"
   network = google_compute_network.keep-bonus-vpc.name
   # Puertos permitidos

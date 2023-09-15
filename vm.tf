@@ -21,4 +21,12 @@ resource "google_compute_instance" "keep-bonus-vm" {
       # Esto asignará una dirección IP externa a la instancia
     }
   }
+  # Lanzamos un script en el inicio de la máquina usando los metada
+  metadata = {
+    startup-script = <<-EOF
+      #!/bin/bash
+      apt update
+      apt install -y apache2
+    EOF
+  }
 }
