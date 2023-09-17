@@ -2,10 +2,6 @@
 
 # Definimos el nombre de la instancia de MySQL
 resource "google_sql_database_instance" "mysql" {
-  # Dependencias que debe tener la instancia
-  depends_on = [
-    google_compute_network.keep-bonus-vpc
-  ]
   name             = var.mysql_name
   database_version = var.mysql_version
   region           = var.region
@@ -19,11 +15,6 @@ resource "google_sql_database_instance" "mysql" {
     backup_configuration {
       enabled    = var.mysql_backup_enabled
       start_time = var.mysql_backup_start_time
-    }
-    # Configuramos la red VPC del proyecto
-    ip_configuration {
-      ipv4_enabled    = "false"
-      private_network = google_compute_network.keep-bonus-vpc.id
     }
   }
   deletion_protection = "false"

@@ -4,11 +4,11 @@
 
 ## Descripción
 
-Este script despliega una infraestructura en GCP con Terraform. La infraestructura consiste en una red virtual VPC, un bucket de almacenamiento en Google Cloud Storage y una instancia de Compute Engine que haga uso de esa red virtual.
+Este script despliega una infraestructura en GCP con Terraform. La infraestructura consiste en una red virtual VPC, un bucket de almacenamiento en Google Cloud Storage, una instancia de Compute Engine que haga uso de esa red virtual que ejecuta un servidor web apache, una instancia de Cloud SQL con dos bases de datos y un usuario de MySQL y se han creado las reglas de firewall necesarias para acceder a la instancia de Compute Engine mediante SSH y acceso al puerto 80 para apache.
 
 ## Requisitos
 
-Para poder ejecutar este script es necesario tener instalado Terraform y tener una cuenta de GCP con un proyecto creado. Además, es necesario tener instalado el SDK de Google Cloud y haber iniciado sesión con el comando `gcloud auth login`.
+Para poder ejecutar este script es necesario tener instalado Terraform y tener una cuenta de GCP con un proyecto creado y una cuenta de servicio asignada a ese proyecto con acceso al mismo. Además, es necesario tener instalado el SDK de Google Cloud y haber iniciado sesión con el comando `gcloud auth login`.
 
 ## Ejecución
 
